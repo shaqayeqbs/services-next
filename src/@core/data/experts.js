@@ -1,0 +1,136 @@
+const dummyExpertData = [
+  {
+    id: 1,
+    name: "Laptop Expert",
+    category: "Electronics",
+    price: 899.99,
+    rating: 2.7,
+    image: "/assets/profile.png",
+    coverPhoto: "/assets/banner.png",
+    phoneNumber: "123-456-7890",
+    email: "laptop.expert@example.com",
+    workSamples: getRandomWorkSamples(),
+  },
+  {
+    id: 2,
+    name: "Sneakers Expert",
+    category: "Footwear",
+    price: 79.99,
+    rating: 4.5,
+    image: "/assets/profile.png",
+    coverPhoto: "/assets/banner.png",
+    phoneNumber: "987-654-3210",
+    email: "sneakers.expert@example.com",
+    workSamples: getRandomWorkSamples(),
+  },
+  {
+    id: 3,
+    name: "Coffee Maker Expert",
+    category: "Home & Kitchen",
+    price: 129.99,
+    rating: 4.2,
+    image: "/assets/profile.png",
+    coverPhoto: "/assets/banner.png",
+    phoneNumber: "555-555-5555",
+    email: "coffee.expert@example.com",
+    workSamples: getRandomWorkSamples(),
+  },
+  {
+    id: 4,
+    name: "Backpack Expert",
+    category: "Fashion",
+    price: 59.99,
+    rating: 0,
+    image: "/assets/profile.png",
+    coverPhoto: "/assets/banner.png",
+    phoneNumber: "111-222-3333",
+    email: "backpack.expert@example.com",
+    workSamples: getRandomWorkSamples(),
+  },
+  {
+    id: 5,
+    name: "Smartphone Expert",
+    category: "Electronics",
+    price: 699.99,
+    rating: 4.8,
+    image: "/assets/profile.png",
+    coverPhoto: "/assets/banner.png",
+    phoneNumber: "999-888-7777",
+    email: "smartphone.expert@example.com",
+    workSamples: getRandomWorkSamples(),
+  },
+  {
+    id: 6,
+    name: "Headphones Expert",
+    category: "Electronics",
+    price: 129.99,
+    rating: 4.6,
+    image: "/assets/profile.png",
+    coverPhoto: "/assets/banner.png",
+    phoneNumber: "777-777-7777",
+    email: "headphones.expert@example.com",
+    workSamples: getRandomWorkSamples(),
+  },
+  {
+    id: 7,
+    name: "Painting Expert",
+    category: "Art",
+    price: 129.99,
+    rating: 4.6,
+    image: "/assets/profile.png",
+    coverPhoto: "/assets/banner.png",
+    phoneNumber: "444-333-2222",
+    email: "painting.expert@example.com",
+    workSamples: getRandomWorkSamples(),
+  },
+  {
+    id: 8,
+    name: "Dress Expert",
+    category: "Clothing",
+    price: 89.99,
+    rating: 3.9,
+    image: "/assets/profile.png",
+    coverPhoto: "/assets/banner.png",
+    phoneNumber: "666-999-8888",
+    email: "dress.expert@example.com",
+    workSamples: getRandomWorkSamples(),
+  },
+  {
+    id: 9,
+    name: "Cookware Set Expert",
+    category: "Home & Kitchen",
+    price: 149.99,
+    rating: 4.1,
+    image: "/assets/profile.png",
+    coverPhoto: "/assets/banner.png",
+    phoneNumber: "333-444-5555",
+    email: "cookware.expert@example.com",
+    workSamples: getRandomWorkSamples(),
+  },
+  {
+    id: 10,
+    name: "Running Shoes Expert",
+    category: "Footwear",
+    price: 69.99,
+    rating: 2.4,
+    image: "/assets/profile.png",
+    coverPhoto: "/assets/banner.png",
+    phoneNumber: "888-666-5555",
+    email: "runningshoes.expert@example.com",
+    workSamples: getRandomWorkSamples(),
+  },
+];
+
+function getRandomWorkSamples() {
+  const sampleCount = Math.floor(Math.random() * 5) + 1; // Random between 1 and 5
+  const workSamples = [];
+
+  for (let i = 1; i <= sampleCount; i++) {
+    const imageSize = Math.floor(Math.random() * (500 - 200 + 1)) + 200; // Random between 200 and 500
+    workSamples.push(`/assets/profile.png?size=${imageSize}`);
+  }
+
+  return workSamples;
+}
+
+export default dummyExpertData;

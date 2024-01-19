@@ -1,0 +1,308 @@
+/* styles/globals.css */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+body {
+  @apply bg-background;
+}
+
+option {
+  @apply border-0 border-b-2;
+}
+
+/* * {
+  @apply text-textColor;
+} */
+
+p {
+  @apply text-[14px] leading-[24px]
+}
+
+.button {
+  @apply flex justify-center text-[19px] my-8 items-center gap-3 bg-primary w-full no-underline text-white p-3 rounded-[5px]
+}
+
+a {
+  @apply text-[18px]
+}
+
+.social-icon {
+  @apply border-2 p-3 rounded-full bg-secondary border-primary
+}
+
+.btn-outline {
+  @apply border-1 border-fundation p-1 px-3 text-[12px] rounded-2xl
+}
+
+.btn-outline-primary {
+  @apply border-1 border-primary text-primary p-[2px] px-3 text-[12px] rounded-2xl
+}
+
+
+.active {
+  @apply border-2 rounded-lg border-primary p-2 px-4
+}
+
+.secondary-button {
+  @apply flex border-1 border-borderColor my-5 p-3 px-11 w-full justify-between items-center mx-auto gap-4 rounded-[18px];
+}
+
+input {
+  @apply w-full focus:outline-none focus-visible:outline-none bg-myGray py-3 px-4 text-[12px]
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s !important;
+}
+
+.input-container {
+  @apply flex pl-3 align-middle focus:outline-none focus-visible:outline-none border-1 border-mutedText mt-4 mb-4 rounded-lg px-2 py-1 w-full bg-myGray items-center text-[15px]
+}
+
+@layer utilities {
+  @variants responsive {
+
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      /* IE and Edge */
+      scrollbar-width: none;
+      /* Firefox */
+    }
+  }
+}
+
+.icons {
+  flex-shrink: 0;
+  /* Prevent icon from shrinking */
+}
+
+h1 {
+  @apply text-[33px] font-[700]
+}
+
+.text {
+  @apply text-[12px]
+}
+
+.text-s {
+  @apply text-[10px]
+}
+
+.text-m {
+  @apply text-[18px]
+}
+
+.container {
+  @apply max-w-[390px] mx-auto text-center
+}
+
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+
+.input-icon {
+  margin-right: 8px;
+  opacity: .4;
+
+}
+
+
+
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.custom-checkbox input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.custom-checkbox label {
+  position: relative;
+  cursor: pointer;
+}
+
+.custom-checkbox label:before {
+  content: "";
+  position: absolute;
+  left: -23px;
+  top: -7px;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #7210FF;
+  border-radius: 4px;
+}
+
+.custom-checkbox input[type="checkbox"]:checked+label:before {
+  background-color: #7210FF;
+}
+
+.custom-checkbox label:after {
+  content: "✔";
+  position: absolute;
+  left: -20px;
+  top: -11px;
+  font-size: 16px;
+  color: white;
+}
+
+.swiper {
+  @apply relative
+}
+
+.swiper-horizontal>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
+  @apply bg-primary !mt-40 bottom-0 z-50
+}
+
+.swiper-horizontal>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic, .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+  @apply bottom-[-rem] z-40
+}
+
+.custom-calendar {
+  box-shadow: 1px 3px 4px 0px #00000040;
+
+
+}
+
+
+.custom-today-day {
+  color: #e67e22 !important;
+  border: 1px solid #e67e22 !important;
+}
+
+.custom-today-day::after {
+  visibility: hidden;
+  /* hide small border under the text */
+}
+
+.Calendar {
+  @apply !p-0 !h-[290px]
+}
+
+.Calendar__sectionWrapper {
+  @apply !h-[22em] !max-h-[26em]
+}
+
+
+.Calendar__weekDays {
+  @apply !text-mutedText !absolute w-full !flex bottom-5
+}
+
+.Calendar__weekDay {
+  @apply !text-mutedText
+}
+
+.Calendar__monthArrowWrapper.-left, .Calendar__monthArrowWrapper.-right {
+  @apply !text-primary
+}
+
+.Calendar__monthYear.-shown {
+  @apply !font-bold
+}
+
+@media (max-width: 1500px) {
+  .responsive-calendar {
+    font-size: 8px !important;
+  }
+}
+
+@media (max-width: 1200px) {
+  .responsive-calendar {
+    font-size: 7px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .responsive-calendar {
+    font-size: 6px !important;
+  }
+}
+
+/* Large screens */
+@media (min-width: 2500px) {
+  .responsive-calendar {
+    font-size: 12px !important;
+  }
+}
+
+/* Add this to your CSS */
+.calendar-container {
+
+  transform-origin: 0 center;
+  align-items: center;
+  width: 100%;
+  height: 320px;
+  padding: 0px !important;
+
+}
+
+.custom-calendar {
+  height: 100%;
+  transform-origin: center 0;
+  transform: scale(1);
+  width: 100% !important;
+  margin: auto !important;
+}
+
+.Calendar {
+  min-height: 30em !important;
+}
+
+
+.Calendar__header {
+  padding-bottom: .5rem !important;
+  padding-top: 1.7rem !important;
+}
+
+.Calendar__day {
+  margin: 0 !important;
+  padding: 0 !important;
+  min-height: 2.2em !important;
+}
+
+.Calendar__sectionWrapper {
+  height: 22em !important;
+  max-height: 26em !important;
+  margin-top: 1rem;
+}
+
+.Calendar__day.-selected {
+  background-color: white;
+  color: #7210FF;
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  .Calendar__sectionWrapper {
+    height: 26em !important;
+    max-height: 26em !important;
+    margin-top: 1rem;
+  }
+
+  .Calendar__day {
+    margin: 0rem !important;
+
+    min-height: 2.6em !important;
+  }
+
+  .calendar-container {
+    max-width: 700px;
+  }
+}

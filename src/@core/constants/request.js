@@ -1,0 +1,76 @@
+import axios from "axios";
+import APP_CONFIG from "./app-config";
+
+export function getLocalAccessToken() {
+  const accessToken = localStorage.getItem("token");
+  return accessToken;
+}
+// Function to get the base URL dynamically
+const getBaseUrl = () => {
+  const currentUrl = window.location.href;
+  const baseUrl = currentUrl.split("/")?.slice(0, 3).join("/");
+  return baseUrl;
+};
+
+const instance = axios.create({
+  baseURL: APP_CONFIG.apiBaseUrl,
+});
+
+instance.interceptors.request.use(
+  (config) => {
+    const token = getLocalAccessToken();
+
+    if (token) {
+      config.headers["Authorization"] = `Bearer ${token}`;
+      config.headers["Content-Type"] = "multipart/form-data";
+    }
+
+    return config;
+  },
+  (error) => {
+    console.log(error);
+    return Promise.reject(error);
+  }
+);
+
+instance.interceptors.response.use(
+  (res) => {
+    if (res.status == 401) {
+      console.log("ssssshereeeeeeeeeeeeeeeeee");
+      // Remove the token from local storage
+      localStorage.removeItem("token");
+    }
+    return res;
+  },
+  async (err) => {
+    try {
+      // console.clear();
+      // const token = getLocalAccessToken();
+      if (err.code === "ERR_NETWORK" || err.code === "ECONNABORTED") {
+        return Promise.reject(err);
+      }
+
+      if (err.response?.status === 401) {
+        console.log("hereeeeeeeeeeeeeeeeee");
+
+        // Remove the token from local storage
+        // localStorage.removeItem("token");
+        // window.location.href = `${getBaseUrl()}/auth/welcome`;
+        // console.log("ssereafdgfbh");
+        return Promise.reject(err); // Return the error to be handled by the caller
+      }
+
+      if (err.response?.status === 404) {
+        return Promise.reject(err); // Return the error to be handled by the caller
+      }
+
+      // If none of the conditions match, just return the error
+      return Promise.reject(err);
+    } catch (_error) {
+      // Handle other errors or return Promise.reject(_error);
+      return Promise.reject(_error);
+    }
+  }
+);
+
+export default instance;

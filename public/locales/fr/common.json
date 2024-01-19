@@ -1,0 +1,20 @@
+{
+  "welcome": "Bienvenue dans Mon Application !",
+  "greeting": "Bonjour, {name}!",
+  "description": "Ceci est une description en français.",
+  "createAccount": "Créer un compte",
+  "login": "Se connecter",
+  "email": "E-mail",
+  "password": "Mot de passe",
+  "confirmPassword": "Confirmer le mot de passe",
+  "registerButton": "S'inscrire",
+  "forgotPassword": "Mot de passe oublié ?",
+  "registerDisclaimer": "En cliquant sur le bouton S'inscrire, vous acceptez l'offre publique lors de l'inscription",
+  "orContinueWith": "- OU Continuer avec -",
+  "facebook": "Facebook",
+  "google": "Google",
+  "apple": "Apple",
+  "alreadyHaveAccount": "Vous avez déjà un compte?",
+  "dontHaveAccount": "Vous n'avez pas de compte?",
+  "getStarted": "Commencer"
+}
